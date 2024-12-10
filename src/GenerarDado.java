@@ -1,7 +1,9 @@
+import java.util.Random;
+
 public class GenerarDado {
 
-    static int Dado(int dado){
-        dado=(int)(Math.random()*6+1);
-        return dado;
+    static int Dado(){
+        Random random = new Random();
+        return random.nextInt(6) + 1;
     }
 }
