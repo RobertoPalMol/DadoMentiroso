@@ -1,3 +1,5 @@
+package JuegoSinRed;
+
 import java.util.Scanner;
 
 class Juego {
@@ -31,8 +33,7 @@ class Juego {
             Jugador jugadorOponente = turnoActual == 0 ? jugador2 : jugador1;
 
             System.out.println("\nTurno de " + jugadorActual.getNombre());
-            System.out.println("Declaración actual: " +
-                    (cantidadDeclarada == 0 ? "Ninguna" : cantidadDeclarada + " dados de " + numeroDeclarado));
+
 
             boolean declaracionValida = false;
 
@@ -51,6 +52,8 @@ class Juego {
                 }
             }
 
+            System.out.println("Declaración actual: " +
+                    (cantidadDeclarada == 0 ? "Ninguna" : cantidadDeclarada + " dados de " + numeroDeclarado));
             System.out.print(jugadorOponente.getNombre() + ", ¿quieres desafiar? (s/n): ");
             String respuesta = sc.next();
             if (respuesta.equalsIgnoreCase("s")) {

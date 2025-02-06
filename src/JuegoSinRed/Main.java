@@ -1,3 +1,5 @@
+package JuegoSinRed;
+
 import java.util.Scanner;
 
 public class Main {
