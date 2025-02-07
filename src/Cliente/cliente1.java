@@ -20,6 +20,7 @@ public class cliente1 {
         while (true) {
             var message = reader.readLine();
             System.out.println(message);
+
         }
     }
 }

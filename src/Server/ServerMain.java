@@ -31,11 +31,16 @@ public class ServerMain {
 
         socketWriter1.println("Nombre del Jugador 1: ");
         socketWriter2.println("Nombre del Jugador 2: ");
-        String nombre1 = socketReader1.readLine();
-        String nombre2 = socketReader2.readLine();
+        System.out.println("hola");
+        var nombre1 = socketReader1.readLine();
+        var nombre2 = socketReader2.readLine();
 
+
+        System.out.println("tu enemigo es:"+nombre1);
+        System.out.println("tu enemigo es:"+nombre2);
         socketWriter1.println("tu enemigo es:"+nombre2);
         socketWriter2.println("tu enemigo es:"+nombre1);
+
 
 
         Jugador jugador1 = new Jugador(nombre1);
