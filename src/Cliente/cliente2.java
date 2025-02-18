@@ -24,10 +24,13 @@ public class cliente2 {
             if(message.contains("Nombre")) {
                 var hand = scanner.nextLine();
                 writer.println(hand);
-            }else if (message.contains("dados")) {
+            }else if (message.contains("Cuántos")) {
                 var hand = scanner.nextLine();
                 writer.println(hand);
             } else if (message.contains("número")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            }else if (message.contains("desafiar")) {
                 var hand = scanner.nextLine();
                 writer.println(hand);
             }
