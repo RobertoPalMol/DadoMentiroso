@@ -26,8 +26,8 @@ class Jugador {
         }
     }
 
-    public void mostrarDados() {
-        System.out.println(nombre + " tiene los dados: " + dados);
+    public String mostrarDados() {
+        return nombre + " tiene los dados: " + dados;
     }
 
     public void perderDado() {

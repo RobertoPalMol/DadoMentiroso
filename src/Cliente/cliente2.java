@@ -20,6 +20,17 @@ public class cliente2 {
         while (true) {
             var message = reader.readLine();
             System.out.println(message);
+
+            if(message.contains("Nombre")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            }else if (message.contains("dados")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            } else if (message.contains("número")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            }
         }
     }
 }

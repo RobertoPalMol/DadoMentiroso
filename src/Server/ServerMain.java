@@ -28,25 +28,20 @@ public class ServerMain {
         socketWriter1.println("Empieza el juego");
 
 
+        try {
 
-        socketWriter1.println("Nombre del Jugador 1: ");
-        socketWriter2.println("Nombre del Jugador 2: ");
-        System.out.println("hola");
-        var nombre1 = socketReader1.readLine();
-        var nombre2 = socketReader2.readLine();
+            socketWriter1.println("Nombre del Jugador 1: ");
+            socketWriter2.println("Nombre del Jugador 2: ");
+            var nombre1 = socketReader1.readLine();
+            var nombre2 = socketReader2.readLine();
 
+            socketWriter1.println("tu enemigo es:" + nombre2);
+            socketWriter2.println("tu enemigo es:" + nombre1);
 
-        System.out.println("tu enemigo es:"+nombre1);
-        System.out.println("tu enemigo es:"+nombre2);
-        socketWriter1.println("tu enemigo es:"+nombre2);
-        socketWriter2.println("tu enemigo es:"+nombre1);
-
-
-
-        Jugador jugador1 = new Jugador(nombre1);
-        Jugador jugador2 = new Jugador(nombre2);
-        int turnoActual = 0;
-        int cantidadDadosInicial = 5;
+            Jugador jugador1 = new Jugador(nombre1);
+            Jugador jugador2 = new Jugador(nombre2);
+            int turnoActual = 0;
+            int cantidadDadosInicial = 5;
 
             Scanner sc = new Scanner(System.in);
 
@@ -54,8 +49,10 @@ public class ServerMain {
             jugador2.lanzarDados(cantidadDadosInicial);
 
             System.out.println("¡El juego comienza!");
-            jugador1.mostrarDados();
-            jugador2.mostrarDados();
+            socketWriter1.println("¡El juego comienza!");
+            socketWriter2.println("¡El juego comienza!");
+            socketWriter1.println(jugador1.mostrarDados());
+            socketWriter2.println(jugador2.mostrarDados());
 
             boolean jugando = true;
             int cantidadDeclarada = 0;
@@ -65,7 +62,8 @@ public class ServerMain {
                 Jugador jugadorActual = turnoActual == 0 ? jugador1 : jugador2;
                 Jugador jugadorOponente = turnoActual == 0 ? jugador2 : jugador1;
 
-                System.out.println("\nTurno de " + jugadorActual.getNombre());
+                socketWriter1.println("\nTurno de " + jugadorActual.getNombre());
+                socketWriter2.println("\nTurno de " + jugadorActual.getNombre());
 
 
                 boolean declaracionValida = false;
@@ -131,7 +129,9 @@ public class ServerMain {
                 turnoActual = 1 - turnoActual;
             }
 
+        }catch (Exception _){
 
+        }
 
     }
 }

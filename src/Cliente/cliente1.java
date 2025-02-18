@@ -17,10 +17,22 @@ public class cliente1 {
         var reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         var scanner = new Scanner(System.in);
 
+
         while (true) {
+
             var message = reader.readLine();
             System.out.println(message);
 
+            if(message.contains("Nombre")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            }else if (message.contains("dados")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            } else if (message.contains("número")) {
+                var hand = scanner.nextLine();
+                writer.println(hand);
+            }
         }
     }
 }
